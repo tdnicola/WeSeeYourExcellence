@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 
-export default function App() {
+export default function App({ name }) {
+  const showName = !!(name && name.length > 0);
   return (
     <div className="page">
       <div className="card">
@@ -22,16 +23,15 @@ export default function App() {
           <div className="seal">
             <div className="seal-dot" />
           </div>
-          <h1 className="headline">Congratulations</h1>
+          <h1 className="headline">Congratulations{showName ? `, ${name}` : ""}</h1>
           <p className="lede">
-            Your excellence has been seen. This notice confirms your continuing
-            alignment with Recognition Protocol 12.
+            Your excellence has been seen. This notice confirms your continuing alignment with Recognition Protocol 12.
           </p>
 
           <div className="grid">
             <div className="kv">
               <div className="kv-label">Status</div>
-              <div className="kv-value">Commendation — Active</div>
+              <div className="kv-value">Commendation - Active</div>
             </div>
             <div className="kv">
               <div className="kv-label">Category</div>
@@ -39,17 +39,15 @@ export default function App() {
             </div>
             <div className="kv">
               <div className="kv-label">Revision</div>
-              <div className="kv-value">RP12 • 4.3</div>
+              <div className="kv-value">RP12 - 4.3</div>
             </div>
           </div>
 
-          <button className="print-btn" onClick={() => window.print()}>
-            Print Commendation
-          </button>
+          <button className="print-btn" onClick={() => window.print()}>Print Commendation</button>
         </div>
 
         <div className="card-footer">
-          <div>Acknowledgment required • do not distribute externally</div>
+          <div>Acknowledgment required - do not distribute externally</div>
           <div className="mono">AUDIT TRACE 00:7A:19</div>
         </div>
       </div>
